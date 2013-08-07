@@ -3,11 +3,9 @@ var fs = require('fs');
 
 var app = express.createServer(express.logger());
 
-var fileBuf = fs.readFileSync('index.html');
-var fileContent = fileBuf.toString();
-
 app.get('/', function(request, response) {
-//  response.send('Hello World 2!');
+    var fileBuf = fs.readFileSync('index.html');
+    var fileContent = fileBuf.toString();
     response.send(fileContent);
 });
 
